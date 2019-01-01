@@ -43,13 +43,5 @@ public class Shooter : MonoBehaviour
     //    }
     //}
 
-    //IEnumerator ShootingYield()
-    //{
-    //    yield return new WaitForSeconds(waitBeforeNextShot);
-    //    shootAble = true;
-    //}
-    //void Shoot()
-    //{
-        
-    //}
+    
 }

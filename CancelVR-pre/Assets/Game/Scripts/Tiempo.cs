@@ -5,54 +5,59 @@ using UnityEngine.UI;
 
 
 public class Tiempo : MonoBehaviour {
+    public float tiempo ;
+    public int CountDown;
+    public int Speed = 10;
 
-	public float tiempo = 0.0f;
+    public bool TimeOut = false;
+
     public Text Tempo;
-    public GameObject Manager;
-    private Shooter shooter;
-    private int cont = 0;
-    public GameObject Reset;
-    public int CountDown = 1000;
 
+    public GameObject GameController;
+    public Niveles NivelesScript;
+    public Reset ResetScript;
 
+    public GameObject Timer;
+    public Tiempo EsteScript;
 
 
     private void Start()
     {
-        //  Invoke("timepdate", 1f);
-        Manager = GameObject.Find("FPSController");
-        shooter = Manager.GetComponent<Shooter>();
+        GameController = GameObject.Find("GameController");
+        NivelesScript = GameController.GetComponent<Niveles>();
+        ResetScript = GameController.GetComponent<Reset>();
 
+        Timer = GameObject.Find("Time");
+        EsteScript = Timer.GetComponent<Tiempo>();
 
     }
-    // Update is called once per frame
-    void Update () {
+
+
+    void Update()
+    {
         if (CountDown > 0)
         {
-            tiempos();
+            Tiempos();
+            TimeOut = false;
         }
 
-        if (CountDown == 0 )
+        if (CountDown == 0)
         {
-            Reset.SetActive(true);
-            shooter.enabled = false;
-
-            //while (CountDown == 0)
-            //{
-            //    cont = cont + 1;
-            //}
+            TimeOut = true;
+            tiempo = 150f;
+            CountDown = 150;
+            EsteScript.enabled = false;
         }
-        
+
     }
 
-    void tiempos()
+    void Tiempos()
     {
         tiempo -= Time.deltaTime;
         CountDown = (int)tiempo;
-    Tempo.text = CountDown.ToString();
-        //Debug.Log(CountDown);
-        shooter.enabled = true;
-        Reset.SetActive(false);
+        Tempo.text = "Time: " + CountDown.ToString();
+        //ResetScript.enabled = false;
     }
-    
+
+
 }

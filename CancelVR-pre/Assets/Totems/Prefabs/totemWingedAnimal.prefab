@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114106867935451882}
   m_Layer: 0
   m_Name: totemWingedAnimal
-  m_TagString: Untagged
+  m_TagString: EnemyTime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   despawnTime: 5
   rb: {fileID: 54724874197455914}
   rndvector: {x: 0, y: 0, z: 0}
-  vel: 15
+  vel: 12
 --- !u!135 &135826068153401558
 SphereCollider:
   m_ObjectHideFlags: 1

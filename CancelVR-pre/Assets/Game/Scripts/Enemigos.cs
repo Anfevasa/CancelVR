@@ -31,20 +31,23 @@ public class Enemigos : MonoBehaviour
     private void Start()
     {
         Controller = GameObject.Find("GameController");
-        niveles = Controller.GetComponent<Niveles>();
-        nivel = niveles.nivel;
-
-        if (nivel == 2) {
-            SpawnInterval = 0.2f;
-        }
-        if (nivel == 3)
-        {
-            SpawnInterval = 0.35f;
-        }
+        niveles = Controller.GetComponent<Niveles>(); 
+          
     }
 
     private void Update()
     {
+        nivel = niveles.nivel;
+
+        if (nivel == 2)
+        {
+            SpawnInterval = 0.35f;
+        }
+        if (nivel == 3)
+        {
+            SpawnInterval = 0.5f;
+        }
+
         x = PlayerPos.position.x + Random.Range(-20f, 20f);
         y = PlayerPos.position.y + Random.Range(-20f, 20f);
         z = PlayerPos.position.z + Random.Range(-20f, 20f);
