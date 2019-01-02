@@ -41,6 +41,8 @@ public class Reset : MonoBehaviour {
 
         TransitionsScript.enabled = false;
 
+        cardboard.trigger.OnClick += CardboardClick;
+
         contador = 0;
                 
     }

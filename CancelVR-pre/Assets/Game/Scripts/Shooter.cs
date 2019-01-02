@@ -30,18 +30,29 @@ public class Shooter : MonoBehaviour
 
     }
 
-    //    private void Update()
-    //{
-    //    if (Input.GetKey(KeyCode.Mouse0))
-    //    {
-    //        if (shootAble)
-    //        {
-    //            shootAble = false;
-    //            Shoot();
-    //            StartCoroutine(ShootingYield());
-    //        }
-    //    }
-    //}
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            if (shootAble)
+            {
+                shootAble = false;
+                Shoot();
+                StartCoroutine(ShootingYield());
+            }
+        }
+    }
+    IEnumerator ShootingYield()
+    {
+        yield return new WaitForSeconds(waitBeforeNextShot);
+        shootAble = true;
+    }
+    void Shoot()
+    {
+        var bullet = Instantiate(theBullet, barrelEnd.position, barrelEnd.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
 
-    
+        Destroy(bullet, despawnTime);
+    }
+
 }

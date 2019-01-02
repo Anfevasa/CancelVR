@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23304092098710040}
   - component: {fileID: 135387071546082334}
   - component: {fileID: 54810115753816330}
-  - component: {fileID: 114804314238307370}
+  - component: {fileID: 114542664670427754}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -101,7 +101,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114804314238307370
+--- !u!114 &114542664670427754
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,8 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj1: {fileID: 1642270568463736}
-  Scorer: {fileID: 0}
   Explosion: {fileID: 0}
+  Score: {fileID: 0}
+  Timer: {fileID: 0}
+  ScoreScript: {fileID: 0}
+  TiempoScript: {fileID: 0}
 --- !u!135 &135387071546082334
 SphereCollider:
   m_ObjectHideFlags: 1

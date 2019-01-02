@@ -8,8 +8,8 @@ public class Collisions : MonoBehaviour
 
     public GameObject obj1;
     public GameObject Explosion;
-    public GameObject Controller;
-    public GameObject Time;
+    public GameObject Score;
+    public GameObject Timer;
 
     private string Tag;
     
@@ -23,48 +23,63 @@ public class Collisions : MonoBehaviour
     {
           Tag = obj1.tag;
 
-        Controller = GameObject.Find("GameController");
-        ScoreScript = Controller.GetComponent<Scoring>();
+        Score = GameObject.Find("Score");
+        ScoreScript = Score.GetComponent<Scoring>();
 
-        Time = GameObject.Find("Time");
-        TiempoScript = Time.GetComponent<Tiempo>();
+        Timer = GameObject.Find("Time");
+        TiempoScript = Timer.GetComponent<Tiempo>();
         //Explosion = GameObject.Find("Explosion");
     }
 
 private void OnCollisionEnter(Collision Other)
 {
-    if (Tag == "Limit")
+        Tag = obj1.tag;
+
+        Score = GameObject.Find("Score");
+        ScoreScript = Score.GetComponent<Scoring>();
+
+        Timer = GameObject.Find("Time");
+        TiempoScript = Timer.GetComponent<Tiempo>();
+
+        if (Tag == "Limit")
     {
         Destroy(Other.gameObject);
     }
     if (Tag == "Bullet" & Other.gameObject.tag == "Enemy")
     {
-        Destroy(Other.gameObject);
-        Destroy(obj1);
+            
+            ScoreScript.AddScore(10);
+            Destroy(Other.gameObject);
+            Destroy(obj1);
        // var Particles = Instantiate(Explosion, Other.transform.position, Quaternion.identity);
         //Instantiate(Explosion, Other.transform.position);
-
-       ScoreScript.AddScore(10);
+       
     }
 
     if (Tag == "Bullet" & Other.gameObject.tag == "Enemy2")
     {
+            
+
+        ScoreScript.AddScore(20);
+
         Destroy(Other.gameObject);
         Destroy(obj1);
        // var Particles = Instantiate(Explosion, Other.transform.position, Quaternion.identity);
         //Instantiate(Explosion, Other.transform.position);
 
-       ScoreScript.AddScore(30);
+       
     }
 
     if (Tag == "Bullet" & Other.gameObject.tag == "EnemyTime")
     {
-        Destroy(Other.gameObject);
-        Destroy(obj1);
+            
+            TiempoScript.CountDown = TiempoScript.CountDown + 20;
+            Destroy(Other.gameObject);
+            Destroy(obj1);
             // var Particles = Instantiate(Explosion, Other.transform.position, Quaternion.identity);
             //Instantiate(Explosion, Other.transform.position);
 
-        TiempoScript.CountDown = TiempoScript.CountDown + 10;
+        
     }
 }
 }

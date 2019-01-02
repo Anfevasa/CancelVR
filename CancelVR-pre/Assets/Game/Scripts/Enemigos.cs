@@ -41,11 +41,11 @@ public class Enemigos : MonoBehaviour
 
         if (nivel == 2)
         {
-            SpawnInterval = 0.35f;
+            SpawnInterval = 0.17f;
         }
         if (nivel == 3)
         {
-            SpawnInterval = 0.5f;
+            SpawnInterval = 0.22f;
         }
 
         x = PlayerPos.position.x + Random.Range(-20f, 20f);

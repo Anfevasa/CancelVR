@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8d1c76ee26c3a49b1fe3e5ccf7c5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnTime: 5
+  despawnTime: 4
   rb: {fileID: 54724874197455914}
   rndvector: {x: 0, y: 0, z: 0}
   vel: 12

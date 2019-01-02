@@ -40,20 +40,20 @@ public class Scoring : MonoBehaviour {
     {
         if (NivelesScript.nivel == 1)
         {
-            limit = 50;
+            limit = 100;
         }
         if (NivelesScript.nivel == 2)
         {
-            limit = 100;
+            limit = 150;
         }
         if (NivelesScript.nivel == 3)
         {
-            limit = 200;
+            limit = 250;
         }
         
 
         ScoreText.text = "Score: " + score.ToString();
-        if (score == limit)
+        if (score >= limit)
         {
             Meta = true;
             score = 0;

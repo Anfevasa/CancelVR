@@ -112,10 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8d1c76ee26c3a49b1fe3e5ccf7c5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnTime: 5
+  despawnTime: 6
   rb: {fileID: 54151065535985300}
   rndvector: {x: 0, y: 0, z: 0}
-  vel: 12
+  vel: 14
 --- !u!135 &135892707467910346
 SphereCollider:
   m_ObjectHideFlags: 1
