@@ -8,6 +8,7 @@ public class Recorrido : MonoBehaviour {
     {
 
         Application.LoadLevel(0);
+        GlobalVariables.activate = false;
 
     }
 }
