@@ -29,40 +29,40 @@ public class MovePlayer : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-            if (transform.position == target.position) {
-                TextGen.SetActive(true);
+            //if (transform.position == target.position) {
+            //   // TextGen.SetActive(true);
 
 
-                timer += Time.deltaTime;
-                crono = timer % 60;
-                seconds = (int)crono;
+            //    timer += Time.deltaTime;
+            //    crono = timer % 60;
+            //    seconds = (int)crono;
 
-                if (seconds > 3) {
-                    Totems.SetActive(true);
-                    TextGen.SetActive(false);
-                    TextTotems.SetActive(true);
+            //    if (seconds > 3) {
+            //        Totems.SetActive(true);
+            //        TextGen.SetActive(false);
+            //        TextTotems.SetActive(true);
 
-                }
-                if (seconds > 9)
-                {
-                    Mummy.SetActive(true);
-                    TextTotems.SetActive(false);
-                    TextMummy.SetActive(true);
-                }
-                if (seconds > 15)
-                {
-                    Rocks.SetActive(true);
-                    TextMummy.SetActive(false);
-                    TextRocks.SetActive(true);
-                }
-                if (seconds > 21)
-                {
-                    TextRocks.SetActive(false);
-                    GlobalVariables.activate = false;
-                    GlobalVariables.TimeToactivate = false;
-                    myObject.SetActive(true);
-                }
-            }
+            //    }
+            //    if (seconds > 9)
+            //    {
+            //        Mummy.SetActive(true);
+            //        TextTotems.SetActive(false);
+            //        TextMummy.SetActive(true);
+            //    }
+            //    if (seconds > 15)
+            //    {
+            //        Rocks.SetActive(true);
+            //        TextMummy.SetActive(false);
+            //        TextRocks.SetActive(true);
+            //    }
+            //    if (seconds > 21)
+            //    {
+            //        TextRocks.SetActive(false);
+            //        GlobalVariables.activate = false;
+            //        GlobalVariables.TimeToactivate = false;
+            //        myObject.SetActive(true);
+            //    }
+            //}
 }
     }
 }
