@@ -7,7 +7,7 @@ public class Recorrido : MonoBehaviour {
     void Start()
     {
 
-        Application.LoadLevel(1);
+        Application.LoadLevel(0);
 
     }
 }

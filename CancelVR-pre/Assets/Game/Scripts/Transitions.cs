@@ -12,6 +12,7 @@ public class Transitions : MonoBehaviour {
     public int m;
 
     public Text ScoreText;
+    public Text AvisosText;
 
     public Transform PlayerTransform;
     public Transform PlaySpaceTransform;
@@ -86,6 +87,7 @@ public class Transitions : MonoBehaviour {
         }
 
         ScoreParcial = ScoringScript.limit;
+        AvisosText.text = " ";
                 
     }
 

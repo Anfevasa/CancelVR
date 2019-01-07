@@ -1371,6 +1371,7 @@ MonoBehaviour:
   PlaySpace: {fileID: 1859814438}
   Player: {fileID: 907292808}
   Light: {fileID: 431145596}
+  AvisosText: {fileID: 838347403}
   GameController: {fileID: 0}
   ResetScript: {fileID: 0}
   ShooterScript: {fileID: 0}
@@ -1442,6 +1443,7 @@ MonoBehaviour:
   n: 0
   m: 0
   ScoreText: {fileID: 585864074}
+  AvisosText: {fileID: 838347403}
   PlayerTransform: {fileID: 907292808}
   PlaySpaceTransform: {fileID: 1859814438}
   PositionN1: {fileID: 23194923}

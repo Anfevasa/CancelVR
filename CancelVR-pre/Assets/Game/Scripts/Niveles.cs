@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Niveles : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Niveles : MonoBehaviour
     public Transform Player;
 
     public Light Light;
+    public Text AvisosText;
 
     public GameObject GameController;
     public Reset ResetScript;
@@ -84,6 +86,7 @@ public class Niveles : MonoBehaviour
         if (ScoringScript.Meta == true || TiempoScript.TimeOut == true)
         {
             //TransitionsScript.enabled = true;
+            AvisosText.text = "Mira abajo para el siguiente nivel";
             RestartGO.SetActive(true);
             TiempoScript.TimeOut = false;
             ScoringScript.Meta = false;
