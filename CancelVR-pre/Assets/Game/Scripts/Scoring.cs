@@ -8,11 +8,12 @@ public class Scoring : MonoBehaviour {
 
     // Use this for initialization
     public int score = 0;
-    public int limit = 50;
+    public int limit;
 
     public bool Meta = false;
 
     public Text ScoreText;
+    public Text MetaText;
 
     public GameObject Scorer;
     public Niveles NivelesScript;
@@ -34,6 +35,9 @@ public class Scoring : MonoBehaviour {
         Timer = GameObject.Find("Time");
         TiempoScript = Timer.GetComponent<Tiempo>();
 
+        score = 0;
+        Meta = false;
+        
     }
 
     void Update()
@@ -41,21 +45,26 @@ public class Scoring : MonoBehaviour {
         if (NivelesScript.nivel == 1)
         {
             limit = 100;
+            MetaText.text = "Meta: " + limit.ToString();
         }
         if (NivelesScript.nivel == 2)
         {
-            limit = 150;
+            limit = 250;
+            MetaText.text = "Meta: " + limit.ToString();
         }
         if (NivelesScript.nivel == 3)
         {
-            limit = 250;
+            limit = 500;
+            MetaText.text = "Meta: " + limit.ToString();
         }
         
 
         ScoreText.text = "Score: " + score.ToString();
+
         if (score >= limit)
         {
-            Meta = true;
+            ScoreText.text = "Score:" + limit.ToString();
+            Meta = true;            
             score = 0;
             TiempoScript.CountDown = 0;
             EsteScript.enabled = false;

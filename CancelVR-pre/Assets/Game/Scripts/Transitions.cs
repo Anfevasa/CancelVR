@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Transitions : MonoBehaviour {
 
     public int Speed = 10;
+
+    public int ScoreParcial;
     public int n;
     public int m;
+
+    public Text ScoreText;
 
     public Transform PlayerTransform;
     public Transform PlaySpaceTransform;
@@ -47,6 +52,7 @@ public class Transitions : MonoBehaviour {
         n = NivelesScript.nivel;
         m = n + 1;
 
+
         NivelesScript.enabled = false;
         ShooterScript.enabled = false;
         TiempoScript.enabled = false;
@@ -77,20 +83,22 @@ public class Transitions : MonoBehaviour {
             ResetScript.Avisos.text = "Game Over";
         }
 
-   
-	}
+        ScoreParcial = ScoringScript.limit;
+                
+    }
 
     void Transition(Transform Place)
     {
         PlayerTransform.position = Vector3.MoveTowards(PlayerTransform.position, Place.position, Time.deltaTime * Speed);
         PlaySpaceTransform.position = new Vector3(-50, -50, -50);
+        ScoreText.text = "Score: " + ScoreParcial.ToString();
         if (PlayerTransform.position == Place.position)
         {
             NivelesScript.nivel = NivelesScript.nivel + 1;
             ResetScript.enabled = true;
             ResetScript.contador = 0;
-            EsteScript.enabled = false;
-            
+            ScoringScript.score = ScoreParcial;
+            EsteScript.enabled = false;            
         }
         
     }

@@ -46,7 +46,7 @@ public class Niveles : MonoBehaviour {
 
         if (nivel == 1)
         {
-            ScoringScript.score = 0;
+            //ScoringScript.score = 0;
             ScoringScript.limit = 50;
 
             TiempoScript.tiempo = 150f;
@@ -54,7 +54,7 @@ public class Niveles : MonoBehaviour {
         }
         if (nivel == 2)
         {
-            ScoringScript.score = 0;
+            //ScoringScript.score = 0;
             ScoringScript.limit = 70;
 
             TiempoScript.tiempo = 12f;
@@ -62,7 +62,7 @@ public class Niveles : MonoBehaviour {
         }
         if (nivel == 3)
         {
-            ScoringScript.score = 0;
+            //ScoringScript.score = 0;
             ScoringScript.limit = 100;
 
             TiempoScript.tiempo = 15f;
@@ -73,10 +73,11 @@ public class Niveles : MonoBehaviour {
 
         //Score.SetActive(true);
         //Time.SetActive(true);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         
         if (ScoringScript.Meta == true || TiempoScript.TimeOut == true)
         {

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 
 public class Tiempo : MonoBehaviour {
-    public float tiempo ;
-    public int CountDown;
+    public float tiempo =150f;
+    public int CountDown = 150;
     public int Speed = 10;
 
     public bool TimeOut = false;
