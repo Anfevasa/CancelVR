@@ -73,7 +73,8 @@ private void OnCollisionEnter(Collision Other)
     if (Tag == "Bullet" & Other.gameObject.tag == "EnemyTime")
     {
             
-            TiempoScript.CountDown = TiempoScript.CountDown + 20;
+            TiempoScript.CountDown = TiempoScript.CountDown + 15;
+            TiempoScript.tiempo = TiempoScript.tiempo + 15f;
             Destroy(Other.gameObject);
             Destroy(obj1);
             // var Particles = Instantiate(Explosion, Other.transform.position, Quaternion.identity);
