@@ -31,6 +31,8 @@ public class Transitions : MonoBehaviour {
     public GameObject Score;
     public Scoring ScoringScript;
 
+    //public GameObject RestartGO;
+
 
     // Use this for initialization
     void Start () {
@@ -97,6 +99,7 @@ public class Transitions : MonoBehaviour {
             NivelesScript.nivel = NivelesScript.nivel + 1;
             ResetScript.enabled = true;
             ResetScript.contador = 0;
+            //RestartGO.SetActive(true);
             ScoringScript.score = ScoreParcial;
             EsteScript.enabled = false;            
         }

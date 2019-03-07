@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
 
-    public CardboardControl cardboard;
+    //public CardboardControl cardboard;
 
-    public int contador = 0;
+    //public int contador = 0;
     // Use this for initialization
     void Start()
     {

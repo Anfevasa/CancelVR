@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Niveles : MonoBehaviour {
+public class Niveles : MonoBehaviour
+{
 
     public int nivel = 0;
-  
+
     public Transform PlaySpace;
     public Transform Player;
- 
+
     public Light Light;
 
     public GameObject GameController;
@@ -17,16 +18,17 @@ public class Niveles : MonoBehaviour {
     public InicioNivel InicioNivelScript;
     public Transitions TransitionsScript;
     public Niveles EsteScript;
-    
+
     public GameObject Time;
     public Tiempo TiempoScript;
 
     public GameObject Score;
     public Scoring ScoringScript;
-    
 
-	// Use this for initialization
-	void Start () {
+    public GameObject RestartGO;
+    // Use this for initialization
+    void Start()
+    {
 
 
         GameController = GameObject.Find("GameController");
@@ -37,7 +39,7 @@ public class Niveles : MonoBehaviour {
         EsteScript = GameController.GetComponent<Niveles>();
 
         InicioNivelScript.enabled = false;
-        
+
         Time = GameObject.Find("Time");
         TiempoScript = Time.GetComponent<Tiempo>();
 
@@ -47,7 +49,7 @@ public class Niveles : MonoBehaviour {
         if (nivel == 1)
         {
             //ScoringScript.score = 0;
-            ScoringScript.limit = 50;
+            ScoringScript.limit = 0;
 
             TiempoScript.tiempo = 150f;
             TiempoScript.CountDown = 150;
@@ -71,22 +73,23 @@ public class Niveles : MonoBehaviour {
 
 
 
-        //Score.SetActive(true);
-        //Time.SetActive(true);
+    
 
     }
 
     // Update is called once per frame
-    void Update () {
-        
+    void Update()
+    {
+
         if (ScoringScript.Meta == true || TiempoScript.TimeOut == true)
         {
-            TransitionsScript.enabled = true;
+            //TransitionsScript.enabled = true;
+            RestartGO.SetActive(true);
             TiempoScript.TimeOut = false;
             ScoringScript.Meta = false;
             TiempoScript.Tempo.text = "Time: 150";
             ScoringScript.ScoreText.text = "Score: 0";
-            EsteScript.enabled = false;                  
+            EsteScript.enabled = false;
 
         }
 
@@ -98,8 +101,8 @@ public class Niveles : MonoBehaviour {
             TiempoScript.enabled = true;
 
         }
-        
-       
+
+
 
     }
 
